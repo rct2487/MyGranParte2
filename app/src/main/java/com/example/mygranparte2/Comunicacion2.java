@@ -2,7 +2,9 @@ package com.example.mygranparte2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class Comunicacion2 extends AppCompatActivity {
@@ -32,5 +34,17 @@ public class Comunicacion2 extends AppCompatActivity {
             evaluacion = 45000;
         txtmensaje.setText("Buen día "+ nombre + " por su ingreso mensual de " + ingresomes +
                 " podemos ofrecerle hasta " + evaluacion + "soles");
+    }
+    public void aceptar(View view){
+        Intent intent = new Intent();
+        intent.putExtra("resultado","aceptado");
+        setResult(RESULT_OK, intent);
+        finish();
+    }
+    public void rechazar(View view){
+        Intent intent = new Intent();
+        intent.putExtra("resultado","rechazado");
+        setResult(RESULT_OK, intent);
+        finish();
     }
 }
